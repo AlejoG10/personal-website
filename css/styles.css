@@ -1,0 +1,134 @@
+
+/* Import variables from variables.css */
+@import url('./variables.css');
+
+/* Import globals from _global.css */
+@import url('./_global.css');
+
+/* Smooth Movement */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========== Navbar Start ========== */
+
+/* nav-bar */
+.navigation {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 0;
+}
+
+.navigation .navbar {
+    background-image: linear-gradient(to right, #fff, #fff);
+    padding: 0;
+}
+
+/**
+ * navbar-brand color
+ * active nav-item color
+ * nav-link:hover color 
+ */
+.navigation .navbar .navbar-brand, .nav-item.active, .nav-link:hover {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* navbar-brand */
+.navigation .navbar .navbar-brand {
+    margin: 0;
+    padding: 30px;
+    position: sticky;
+}
+
+/* nav-link color */
+.navigation .navbar .nav-link {
+    color: var(--navlink-color);
+    font: normal 500 15px/2px var(--robot);
+    padding: 1.7rem;
+}
+
+/* ========== Navbar End ========== */
+
+
+/* ========== Banner Start ========== */
+
+#banner .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 0;
+}
+
+#banner .banner-text h1, h3, h4 {
+    font: normal bold 50px/72px var(--roboto);
+}
+
+#banner .banner-text h3 {
+    font-weight: 500;
+}
+
+#banner .banner-text h3::after {
+    content: '';
+    height: 2px;
+    width: 250px;
+    background: black;
+    display: inline-block;
+    margin-left: 5%;
+    transform: translateY(-8px);
+}
+
+#banner .banner-text h1 {
+    font-size: 4rem;
+}
+
+#banner .banner-text h4 {
+    font-size: 1.5rem;
+}
+
+#banner .banner-btns .primary-btn {
+    margin-right: 30px;
+}
+
+#banner .banner-img > img {
+    width: 500px;
+}
+
+/* ========== Banner End ========== */
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .navigation .navbar .nav-link {
+        padding: 0.7rem 1.7rem;
+    }
+
+    #banner .row {
+        flex-direction: column;
+    }
+
+    #banner .row .banner-text, .banner-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #banner .banner-text h3 {
+        display: inline-block;
+    }
+
+    #banner .banner-text h3::after {
+        display: none;
+    }
+
+    #banner .row .banner-img {
+        margin: 150px 0;
+    }
+
+    #banner .row .banner-img img {
+        width: 80%;
+    }
+}
